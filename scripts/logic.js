@@ -42,8 +42,8 @@ window.onload = () =>
 let cameraOffset = { x: window.innerWidth/2, y: window.innerHeight/2 }
 let cameraZoom = 0.1
 let MAX_ZOOM = 3
-let MIN_ZOOM = 0.05
-let SCROLL_SENSITIVITY = 0.002
+let MIN_ZOOM = 0.1
+let SCROLL_SENSITIVITY = 0.0015
 
 function draw()
 {
@@ -62,7 +62,7 @@ function draw()
 
   image.src = selected_map;
 
-  ctx.drawImage(image, 0, 0);
+  ctx.drawImage(image, -image.width / 2, -image.height / 2);
 
   requestAnimationFrame( draw )
 }
@@ -154,7 +154,7 @@ function adjustZoom(zoomAmount, zoomFactor)
   // TODO make it smooth
   if (zoomAmount)
   {
-    cameraZoom -= zoomAmount
+    cameraZoom -= zoomAmount;
   }
   else if (zoomFactor)
   {
