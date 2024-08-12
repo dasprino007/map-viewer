@@ -18,8 +18,8 @@ button {
 
   cursor: pointer;
 
-  min-width: 2vmax;
-  min-height: 2vmax;
+  min-width: 2em;
+  min-height: 2em;
   padding: 0;
 }
 
