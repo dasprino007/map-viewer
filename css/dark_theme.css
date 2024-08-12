@@ -19,8 +19,8 @@ button {
 
   cursor: pointer;
 
-  min-width: 2vw;
-  min-height: 2vw;
+  min-width: 2vmax;
+  min-height: 2vmax;
   padding: 0;
 }
 
