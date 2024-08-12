@@ -85,11 +85,13 @@ function onPointerUp(e)
 
 function onPointerMove(e)
 {
-    if (isDragging)
+    if (!isDragging)
     {
-        cameraOffset.x = getEventLocation(e).x/cameraZoom - dragStart.x
-        cameraOffset.y = getEventLocation(e).y/cameraZoom - dragStart.y
+      return;
     }
+
+    cameraOffset.x = getEventLocation(e).x/cameraZoom - dragStart.x;
+    cameraOffset.y = getEventLocation(e).y/cameraZoom - dragStart.y;
 }
 
 function handleTouch(e, singleTouchHandler)
@@ -155,6 +157,5 @@ function adjustZoom(zoomAmount, zoomFactor)
 function toggleMapsbarHidden()
 {
   button = document.getElementById("mapsbar");
-  console.log(button.hidden)
   button.hidden = ! button.hidden;
 }
