@@ -14,7 +14,7 @@ button {
   border: 0.1em solid #D8D8F6;
   border-radius: 0.25em;
   font-size: 1.3em;
-  margin: 0 0.2em 0 0;
+  margin: 0.2em 0.2em 0 0;
 
   cursor: pointer;
 
@@ -29,6 +29,7 @@ button:hover {
 }
 
 ul {
+  padding: 0;
   display: grid;
 }
 
@@ -45,10 +46,6 @@ ul {
 
 .buttons {
   display: flex;
-}
-
-#mapsbar {
-  padding: 0;
 }
 
 #canvas {

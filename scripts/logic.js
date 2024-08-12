@@ -166,7 +166,7 @@ function adjustZoom(zoomAmount, zoomFactor)
   cameraZoom = Math.max( cameraZoom, MIN_ZOOM )
 }
 
-function toggleMapsbarHidden()
+function toggleMapsHidden()
 {
   button = document.getElementById("mapsbar");
   button.hidden = ! button.hidden;
