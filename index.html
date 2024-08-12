@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Map Viewer</title>
+    <link rel="icon" type="image/x-icon" href="resources/icon.ico">
+    <link rel="stylesheet" type="text/css" href="css/dark_theme.css"/>
+    <script src="scripts/logic.js"></script>
+  </head>
+  <body>
+    <canvas id="canvas">
+    </canvas>
+
+    <div class="toolbar">
+      <button
+        title="Show/Hide Maps"
+        onclick="toggleMapsbarHidden()"
+        >#</button>
+      <button
+        title="Zoom in"
+        id="zoom_in"
+        onclick="adjustZoom(-0.3)"
+        >+</button>
+      <button
+        id="zoom_out"
+        title="Zoom out"
+        onclick="adjustZoom(0.3)"
+        >-</button>
+    </div>
+    <div id="mapsbar" hidden>
+      <button class="selector" onclick="map_path='maps/Savannah-0.png'">Savannah</button>
+      <button class="selector" onclick="map_path='maps/Solaris-0.png'">Solaris</button>
+      <button class="selector" onclick="map_path='maps/Shiva-0.png'">Shiva</button>
+      <button class="selector" onclick="map_path='maps/Prison-0.png'">Fiorina</button>
+    </div>
+  <body/>
+</html>

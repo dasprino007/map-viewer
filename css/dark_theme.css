@@ -1,0 +1,65 @@
+body, html {
+  background-color: #011627;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+
+  background-color: #011627;
+  color: #D8D8F6;
+  /*border: none;*/
+  border: 0.1em solid #D8D8F6;
+  border-radius: 0.25em;
+  font-size: 1.3em;
+  margin: 0em 0.2em 0em 0em;
+
+  cursor: pointer;
+
+  min-width: 1.5em;
+  height: 1.5em;
+  padding: 0;
+}
+
+button:hover {
+  background-color: #D8D8F6;
+  color: #011627;
+}
+
+div {
+  left: 1%;
+  position: absolute;
+  display: flex;
+
+  justify-content: center;
+  vertical-align: middle;
+}
+
+[hidden]{
+  display:none;
+}
+
+.toolbar {
+  top: 2%;
+}
+
+#mapsbar {
+  bottom: 2%;
+}
+
+.selector {
+  padding: 0em 2em;
+  margin: 0em 0.3em 0em 0em;
+}
+
+#canvas {
+  overflow: hidden;
+  height: 99vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  image-rendering: pixelated;
+}
