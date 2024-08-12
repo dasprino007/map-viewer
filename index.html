@@ -13,26 +13,28 @@
     </canvas>
 
     <div class="toolbar">
-      <button
-        title="Show/Hide Maps"
-        onclick="toggleMapsbarHidden()"
-        >#</button>
-      <button
-        title="Zoom in"
-        id="zoom_in"
-        onclick="adjustZoom(-0.3)"
-        >+</button>
-      <button
-        id="zoom_out"
-        title="Zoom out"
-        onclick="adjustZoom(0.3)"
-        >-</button>
+      <div class="buttons">
+        <button
+          title="Show/Hide Maps"
+          onclick="toggleMapsbarHidden()"
+          >#</button>
+        <button
+          title="Zoom in"
+          id="zoom_in"
+          onclick="adjustZoom(-0.3)"
+          >+</button>
+        <button
+          id="zoom_out"
+          title="Zoom out"
+          onclick="adjustZoom(0.3)"
+          >-</button>
+      </div>
+      <ul id="mapsbar" hidden>
+        <button class="selector" onclick="map_path='maps/Savannah-0.png'">Savannah</button>
+        <button class="selector" onclick="map_path='maps/Solaris-0.png'">Solaris</button>
+        <button class="selector" onclick="map_path='maps/Shiva-0.png'">Shiva</button>
+        <button class="selector" onclick="map_path='maps/Prison-0.png'">Fiorina</button>
+      </ul>
     </div>
-    <ul id="mapsbar" hidden>
-      <button class="selector" onclick="map_path='maps/Savannah-0.png'">Savannah</button>
-      <button class="selector" onclick="map_path='maps/Solaris-0.png'">Solaris</button>
-      <button class="selector" onclick="map_path='maps/Shiva-0.png'">Shiva</button>
-      <button class="selector" onclick="map_path='maps/Prison-0.png'">Fiorina</button>
-    </ul>
   <body/>
 </html>

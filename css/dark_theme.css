@@ -11,11 +11,10 @@ button {
 
   background-color: #011627;
   color: #D8D8F6;
-  /*border: none;*/
   border: 0.1em solid #D8D8F6;
   border-radius: 0.25em;
   font-size: 1.3em;
-  margin: 0em 0.2em 0em 0em;
+  margin: 0 0.2em 0 0;
 
   cursor: pointer;
 
@@ -30,9 +29,7 @@ button:hover {
 }
 
 ul {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
+  display: grid;
 }
 
 [hidden]{
@@ -43,27 +40,22 @@ ul {
   top: 2%;
   left: 1%;
   position: absolute;
-  display: flex;
+  display: grid;
+}
 
-  justify-content: center;
-  vertical-align: middle;
+.buttons {
+  display: flex;
 }
 
 #mapsbar {
-  bottom: 2%;
-  left: 1%;
-  position: absolute;
-}
-
-.selector {
-  padding: 0em 2em;
-  margin: 0em 0.3em 0em 0em;
+  padding: 0;
 }
 
 #canvas {
+  position: absolute;
   overflow: hidden;
-  height: 99vh;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   margin: 0;
   padding: 0;
   image-rendering: pixelated;
