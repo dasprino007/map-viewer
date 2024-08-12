@@ -4,7 +4,21 @@
 
 // TODO rewrite it all, add more comments, add map buttons from json file
 
-var map_path = "maps/Solaris-0.png";
+
+const params = new Proxy(new URLSearchParams(window.location.search), {
+  get: (searchParams, prop) => searchParams.get(prop),
+});
+
+let selected_map = params.map;
+
+if (!selected_map)
+{
+  selected_map = "Solaris";
+}
+
+selected_map = "maps/" + selected_map + "-0.png" // TODO unshitify this
+
+console.log(selected_map);
 
 let canvas;
 let ctx;
@@ -26,7 +40,7 @@ window.onload = () =>
 }
 
 let cameraOffset = { x: window.innerWidth/2, y: window.innerHeight/2 }
-let cameraZoom = 1
+let cameraZoom = 0.1
 let MAX_ZOOM = 3
 let MIN_ZOOM = 0.05
 let SCROLL_SENSITIVITY = 0.002
@@ -46,7 +60,7 @@ function draw()
 
   var image = new Image();
 
-  image.src = map_path;
+  image.src = selected_map;
 
   ctx.drawImage(image, 0, 0);
 
@@ -85,13 +99,13 @@ function onPointerUp(e)
 
 function onPointerMove(e)
 {
-    if (!isDragging)
-    {
-      return;
-    }
+  if (!isDragging)
+  {
+    return;
+  }
 
-    cameraOffset.x = getEventLocation(e).x/cameraZoom - dragStart.x;
-    cameraOffset.y = getEventLocation(e).y/cameraZoom - dragStart.y;
+  cameraOffset.x = getEventLocation(e).x/cameraZoom - dragStart.x;
+  cameraOffset.y = getEventLocation(e).y/cameraZoom - dragStart.y;
 }
 
 function handleTouch(e, singleTouchHandler)
@@ -150,8 +164,6 @@ function adjustZoom(zoomAmount, zoomFactor)
 
   cameraZoom = Math.min( cameraZoom, MAX_ZOOM )
   cameraZoom = Math.max( cameraZoom, MIN_ZOOM )
-        
-  console.log(zoomAmount, cameraZoom)
 }
 
 function toggleMapsbarHidden()
