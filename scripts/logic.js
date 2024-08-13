@@ -58,8 +58,11 @@ async function load_json(url)
     map_name = params.map;
   }
 
-  map_url = maps.maps[map_name].url;
-  labels = maps.maps[map_name].labels;
+  if (!map_name)
+  {
+    map_url = maps.maps[map_name].url;
+    labels = maps.maps[map_name].labels;
+  }
   console.log(`Using map ${map_url} with ${Object.keys(labels).length} labels`);
 
   let mapsbar = document.getElementById("mapsbar");
