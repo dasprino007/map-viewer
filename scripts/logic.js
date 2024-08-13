@@ -52,17 +52,15 @@ async function load_json(url)
 
   let map_name = maps.main;
 
-  if (params.map)
+  if (params.map in maps.maps)
   {
     // use value from Query
     map_name = params.map;
   }
 
-  if (!map_name)
-  {
-    map_url = maps.maps[map_name].url;
-    labels = maps.maps[map_name].labels;
-  }
+  map_url = maps.maps[map_name].url;
+  labels = maps.maps[map_name].labels;
+
   console.log(`Using map ${map_url} with ${Object.keys(labels).length} labels`);
 
   let mapsbar = document.getElementById("mapsbar");
