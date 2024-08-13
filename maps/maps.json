@@ -77,7 +77,30 @@
       "name": "Fiorina",
       "url": "maps/Prison-0.png",
       "labels":
-      []
+      [
+        {"name": "LZ1", "size": 12, "x": 3325, "y": -250},
+        {"name": "LZ2", "size": 12, "x": 925, "y": 2450},
+        {"name": "Disco", "size": 8, "x": 2200, "y": 150},
+        {"name": "Survivor Camp", "size": 8, "x": 2100, "y": -350},
+        {"name": "Engineering Ring", "size": 8, "x": 2000, "y": 1300},
+        {"name": "Lowsec Cellblock", "size": 8, "x": 900, "y": 650},
+        {"name": "Research Cellblock", "size": 8, "x": 1200, "y": -1200},
+        {"name": "Medbay", "size": 8, "x": -50, "y": -825},
+        {"name": "Medbay Admin", "size": 8, "x": -250, "y": -1350},
+        {"name": "Cryo Lab", "size": 8, "x": -50, "y": -1900},
+        {"name": "Servers", "size": 8, "x": -1700, "y": -1900},
+        {"name": "Blue Dorms", "size": 8, "x": -1500, "y": -500},
+        {"name": "Chapel", "size": 8, "x": -700, "y": 0},
+        {"name": "Green Dorms", "size": 8, "x": -3000, "y": -500},
+        {"name": "Transit Hub", "size": 8, "x": -1300, "y": 650},
+        {"name": "Elevators", "size": 8, "x": -2750, "y": 550},
+        {"name": "Firebush", "size": 8, "x": -3700, "y": 550},
+        {"name": "Scavenger Ship", "size": 8, "x": -4200, "y": 1250},
+        {"name": "Botany", "size": 8, "x": -950, "y": 1300},
+        {"name": "Park", "size": 8, "x": -2050, "y": 2300},
+        {"name": "Souto Promo", "size": 8, "x": -1450, "y": 2300},
+        {"name": "Armory", "size": 8, "x": 400, "y": 1700}
+      ]
     }
   },
   "main": "Solaris"
