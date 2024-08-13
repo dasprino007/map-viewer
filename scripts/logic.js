@@ -9,12 +9,12 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
   get: (searchParams, prop) => searchParams.get(prop),
 });
 
-let is_legend_hidden = true;
+let is_legend_hidden = false;
 
 load_json("maps/maps.json");
-let map_url = "resources/sleeping.png";
 let labels = {};
 
+let image = new Image();
 let canvas;
 let ctx;
 
@@ -58,7 +58,7 @@ async function load_json(url)
     map_name = params.map;
   }
 
-  map_url = maps.maps[map_name].url;
+  let map_url = maps.maps[map_name].url;
   labels = maps.maps[map_name].labels;
 
   console.log(`Using map ${map_url} with ${Object.keys(labels).length} labels`);
@@ -76,6 +76,7 @@ async function load_json(url)
     mapsbar.appendChild(new_button);
   }
 
+  image.src = map_url;
 }
 
 function draw()
@@ -91,16 +92,14 @@ function draw()
 
   ctx.imageSmoothingEnabled = false;
 
-  var image = new Image();
-  image.src = map_url;
-
   ctx.drawImage(image, -image.width / 2, -image.height / 2);
 
   if ( ! is_legend_hidden )
   {
-    for (const [key, value] of Object.entries(labels))
+    for (const iter in labels)
     {
-      drawText(key, value.x, value.y, value.size);
+      value = labels[iter];
+      drawText(value.name, value.x, value.y, value.size);
     }
   }
 

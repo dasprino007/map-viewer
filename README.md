@@ -15,9 +15,9 @@ or
       "name": "map name",
       "url": "map url (internal or external)",
       "labels":
-      {
-        "label name": {"size": 12, "x": 0, "y": 0}
-      }
+      [
+        {"name": "name", "size": 12, "x": 0, "y": 0}
+      ]
     }
   }
   "main": "id of main map"
