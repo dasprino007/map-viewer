@@ -4,10 +4,12 @@
 
 // TODO rewrite it all, add more comments, add map buttons from json file
 
-
+// get Query parametres
 const params = new Proxy(new URLSearchParams(window.location.search), {
   get: (searchParams, prop) => searchParams.get(prop),
 });
+
+let is_legend_hidden = true;
 
 let selected_map = params.map;
 
@@ -16,7 +18,7 @@ if (!selected_map)
   selected_map = "Solaris";
 }
 
-selected_map = "maps/" + selected_map + "-0.png" // TODO unshitify this
+selected_map = `maps/${selected_map}-0.png` // TODO unshitify this
 
 console.log(selected_map);
 
@@ -64,7 +66,23 @@ function draw()
 
   ctx.drawImage(image, -image.width / 2, -image.height / 2);
 
+  if ( ! is_legend_hidden )
+  {
+    drawText("Example", 0, 0);
+  }
+
   requestAnimationFrame( draw )
+}
+
+function drawText(text, x, y, font_size=12, stroke_size=2, font="Arial")
+{
+  ctx.fillStyle = "white";
+  ctx.strokeStyle = "black";
+  ctx.lineWidth = stroke_size;
+
+  ctx.font = `${font_size}em ${font}`;
+  ctx.fillText(text, x, y);
+  ctx.strokeText(text, x, y);
 }
 
 // Gets the relevant location from a mouse or single touch event
@@ -170,4 +188,9 @@ function toggleMapsHidden()
 {
   button = document.getElementById("mapsbar");
   button.hidden = ! button.hidden;
+}
+
+function toggleLegendHidden()
+{
+  is_legend_hidden = ! is_legend_hidden;
 }
