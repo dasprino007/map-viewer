@@ -11,19 +11,23 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
 
 let is_legend_hidden = true;
 
-let selected_map = params.map;
-
-if (!selected_map)
-{
-  selected_map = "Solaris";
-}
-
-selected_map = `maps/${selected_map}-0.png` // TODO unshitify this
-
-console.log(selected_map);
+load_json("maps/maps.json");
+let map_url = "resources/sleeping.png";
+let labels = {};
 
 let canvas;
 let ctx;
+
+let cameraOffset = { x: window.innerWidth/2, y: window.innerHeight/2 };
+let cameraZoom = 0.1;
+let MAX_ZOOM = 3;
+let MIN_ZOOM = 0.1;
+let SCROLL_SENSITIVITY = 0.0015;
+let initialPinchDistance = null;
+let lastZoom = cameraZoom;
+
+let isDragging = false;
+let dragStart = { x: 0, y: 0 };
 
 window.onload = () =>
 {
@@ -41,11 +45,37 @@ window.onload = () =>
   draw()
 }
 
-let cameraOffset = { x: window.innerWidth/2, y: window.innerHeight/2 }
-let cameraZoom = 0.1
-let MAX_ZOOM = 3
-let MIN_ZOOM = 0.1
-let SCROLL_SENSITIVITY = 0.0015
+async function load_json(url)
+{
+  var response = await fetch(url);
+  let maps = await response.json();
+
+  let map_name = maps.main;
+
+  if (params.map)
+  {
+    // use value from Query
+    map_name = params.map;
+  }
+
+  map_url = maps.maps[map_name].url;
+  labels = maps.maps[map_name].labels;
+  console.log(`Using map ${map_url} with ${Object.keys(labels).length} labels`);
+
+  let mapsbar = document.getElementById("mapsbar");
+  for (const [key, value] of Object.entries(maps.maps))
+  {
+    var new_button = document.createElement("button");
+
+    new_button.innerText = value.name;
+    new_button.onclick = function () {
+        location.href = `?map=${key}`;
+    };
+
+    mapsbar.appendChild(new_button);
+  }
+
+}
 
 function draw()
 {
@@ -61,28 +91,33 @@ function draw()
   ctx.imageSmoothingEnabled = false;
 
   var image = new Image();
-
-  image.src = selected_map;
+  image.src = map_url;
 
   ctx.drawImage(image, -image.width / 2, -image.height / 2);
 
   if ( ! is_legend_hidden )
   {
-    drawText("Example", 0, 0);
+    for (const [key, value] of Object.entries(labels))
+    {
+      drawText(key, value.x, value.y, value.size);
+    }
   }
 
   requestAnimationFrame( draw )
 }
 
-function drawText(text, x, y, font_size=12, stroke_size=2, font="Arial")
+function drawText(text, x, y, font_size=12, stroke_size=3, font="Arial")
 {
   ctx.fillStyle = "white";
-  ctx.strokeStyle = "black";
+  ctx.strokeStyle = "#011627";
   ctx.lineWidth = stroke_size;
 
+  ctx.shadowBlur = 5;
+  ctx.shadowColor = "black";
+
   ctx.font = `${font_size}em ${font}`;
-  ctx.fillText(text, x, y);
   ctx.strokeText(text, x, y);
+  ctx.fillText(text, x, y);
 }
 
 // Gets the relevant location from a mouse or single touch event
@@ -97,9 +132,6 @@ function getEventLocation(e)
         return { x: e.clientX, y: e.clientY }        
     }
 }
-
-let isDragging = false
-let dragStart = { x: 0, y: 0 }
 
 function onPointerDown(e)
 {
@@ -138,9 +170,6 @@ function handleTouch(e, singleTouchHandler)
         handlePinch(e)
     }
 }
-
-let initialPinchDistance = null
-let lastZoom = cameraZoom
 
 function handlePinch(e)
 {

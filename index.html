@@ -6,7 +6,7 @@
     <title>Map Viewer</title>
     <link rel="icon" type="image/x-icon" href="resources/icon.ico">
     <link rel="stylesheet" type="text/css" href="css/dark_theme.css"/>
-    <script src="scripts/logic.js"></script>
+    <script type="text/javascript" src="scripts/logic.js"></script>
   </head>
   <body>
     <canvas id="canvas">
@@ -21,7 +21,6 @@
         <button
           title="Legend"
           onclick="toggleLegendHidden()"
-          hidden
           >?</button>
         <button
           title="Zoom in"
@@ -35,10 +34,6 @@
           >-</button>
       </div>
       <ul id="mapsbar" hidden>
-        <button class="selector" onclick="location.href='?map=Savannah'">Savannah</button>
-        <button class="selector" onclick="location.href='?map=Solaris'">Solaris</button>
-        <button class="selector" onclick="location.href='?map=Shiva'">Shiva</button>
-        <button class="selector" onclick="location.href='?map=Prison'">Fiorina</button>
       </ul>
     </div>
   <body/>

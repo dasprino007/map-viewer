@@ -1,19 +1,25 @@
 ### Tunguso4ka's SS14 Map Viewer
 (actually Image Viewer, but who cares?)
 
-TODO
+## How to launch locally?
+`python -m http.server`
+or
+`npx http-server`
 
-Not yet implemented :(
 ## maps.json
 ```
 {
-    "maps": [
-        {"name": "map name",
-        "id": "map id",
-        "url": "map path (internal or external)",
-        "labels": {"label name": {"x": 0, "y": 0}
-                }
-        },
-    ]
+  "maps": {
+    "map id":
+    {
+      "name": "map name",
+      "url": "map url (internal or external)",
+      "labels":
+      {
+        "label name": {"size": 12, "x": 0, "y": 0}
+      }
+    }
+  }
+  "main": "id of main map"
 }
 ```
