@@ -19,10 +19,10 @@ let canvas;
 let ctx;
 
 let cameraOffset = { x: window.innerWidth/2, y: window.innerHeight/2 };
-let cameraZoom = 0.1;
-let MAX_ZOOM = 3;
+let cameraZoom = 0.15;
+let MAX_ZOOM = 2.5;
 let MIN_ZOOM = 0.1;
-let SCROLL_SENSITIVITY = 0.0015;
+let SCROLL_SENSITIVITY = 0.025;
 let initialPinchDistance = null;
 let lastZoom = cameraZoom;
 
@@ -61,9 +61,6 @@ async function load_json(url)
   let map_url = maps.maps[map_name].url;
   labels = maps.maps[map_name].labels;
 
-  console.log(`Using map ${map_url} with ${Object.keys(labels).length} labels`);
-
-  let mapsbar = document.getElementById("mapsbar");
   for (const [key, value] of Object.entries(maps.maps))
   {
     var new_button = document.createElement("button");
@@ -77,6 +74,8 @@ async function load_json(url)
   }
 
   image.src = map_url;
+
+  console.log(`Loaded map ${map_url} with ${Object.keys(labels).length} labels.`);
 }
 
 function draw()
@@ -198,10 +197,9 @@ function adjustZoom(zoomAmount, zoomFactor)
     return
   }
 
-  // TODO make it smooth
   if (zoomAmount)
   {
-    cameraZoom -= zoomAmount;
+    cameraZoom -= (cameraZoom * 0.1) * zoomAmount;
   }
   else if (zoomFactor)
   {
