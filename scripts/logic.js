@@ -75,6 +75,10 @@ async function load_json(url)
 
   image.src = map_url;
 
+  var desc = `View ${map_name} map!`
+  document.querySelector('meta[name="description"]').setAttribute("content", desc);
+  document.querySelector('meta[property="og:description"]').setAttribute("content", desc);
+
   console.log(`Loaded map ${map_url} with ${Object.keys(labels).length} labels.`);
 }
 
