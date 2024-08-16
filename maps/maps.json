@@ -1,108 +1,36 @@
 {
   "maps": {
-    "Solaris":
+    "Esperanza":
     {
-      "name": "Solaris",
-      "url": "maps/Solaris-0.png",
+      "name": "Esperanza",
+      "url": "maps/Esperanza-0.png",
       "labels":
       [
-        {"name": "LZ1", "size": 12, "x": -2875, "y": -2650},
-        {"name": "LZ2", "size": 12, "x": -2700, "y": 550},
-        {"name": "Office Complex", "size": 8, "x": 0, "y": -100},
-        {"name": "Administration", "size": 8, "x": -1150, "y": -400},
-        {"name": "Filtration", "size": 8, "x": -450, "y": 450},
-        {"name": "Engineering", "size": 8, "x": -1525, "y": 850},
-        {"name": "Cargo", "size": 8, "x": -1800, "y": 100},
-        {"name": "Store", "size": 8, "x": -2000, "y": -650},
-        {"name": "Virology", "size": 8, "x": -3025, "y": -600},
-        {"name": "Hospital", "size": 8, "x": -1500, "y": -1400},
-        {"name": "Dorms", "size": 8, "x": -400, "y": -1400},
-        {"name": "Marshal Office", "size": 8, "x": -1200, "y": -2000},
-        {"name": "Chapel", "size": 8, "x": 1250, "y": -250},
-        {"name": "EVA", "size": 8, "x": 700, "y": -1700},
-        {"name": "Lambda Lab", "size": 8, "x": 1800, "y": -1700},
-        {"name": "Bar", "size": 8, "x": 100, "y": -800},
-        {"name": "Mess", "size": 8, "x": 700, "y": -800},
-        {"name": "Hydro", "size": 8, "x": 700, "y": -1100},
-        {"name": "Mining Facility", "size": 8, "x": -2800, "y": 2400},
-        {"name": "South Eastern Caves", "size": 8, "x": 2000, "y": 2400},
-        {"name": "ETA Research", "size": 8, "x": -550, "y": 2300},
-        {"name": "T-comms", "size": 6, "x": -3400, "y": -2350},
-        {"name": "Garage", "size": 6, "x": -2950, "y": -1900},
-        {"name": "Storage", "size": 6, "x": -1100, "y": 200}
       ]
     },
-    "Savannah":
+    "EstacaoPirata":
     {
-      "name": "Savannah",
-      "url": "maps/Savannah-0.png",
+      "name": "Estação Pirata",
+      "url": "maps/EstacaoPirata-0.png",
       "labels":
       []
     },
-    "Shiva":
+    "Gaxstation":
     {
-      "name": "Shiva",
-      "url": "maps/Shiva-0.png",
+      "name": "Gaxstation",
+      "url": "maps/Gaxstation-0.png",
       "labels":
       [
-        {"name": "LZ1", "size": 12, "x": -2925, "y": 1600},
-        {"name": "LZ2", "size": 12, "x": -2975, "y": -1800},
-        {"name": "Warehouse", "size": 8, "x": -2100, "y": 2000},
-        {"name": "North Aerodrom Hangar", "size": 8, "x": -2350, "y": 1100},
-        {"name": "Junk Yard", "size": 6, "x": -400, "y": 2100},
-        {"name": "Junk Yard", "size": 6, "x": 150, "y": 1400},
-        {"name": "Anti-Freeze Bar", "size": 8, "x": -200, "y": 900},
-        {"name": "Fort Biceps", "size": 4, "x": 450, "y": 2000},
-        {"name": "Research Habitation", "size": 12, "x": 1600, "y": 1300},
-        {"name": "Research Hab Interior", "size": 6, "x": 2500, "y": 2100},
-        {"name": "Colony Garage", "size": 8, "x": 800, "y": -50},
-        {"name": "Disposals", "size": 6, "x": 2600, "y": -300},
-        {"name": "Botany", "size": 8, "x": -300, "y": -500},
-        {"name": "Colony Administration", "size": 4, "x": -300, "y": 50},
-        {"name": "Panic room", "size": 6, "x": -300, "y": 350},
-        {"name": "Cave Camp", "size": 6, "x": -1600, "y": -250},
-        {"name": "Command Centre", "size": 4, "x": -50, "y": -1250},
-        {"name": "Argentinian Research HQ", "size": 4, "x": -2050, "y": -2200},
-        {"name": "Church", "size": 4, "x": 100, "y": -1700},
-        {"name": "Morgue", "size": 4, "x": 450, "y": -1700},
-        {"name": "Canteen", "size": 4, "x": 800, "y": -1850},
-        {"name": "B-Ball Court", "size": 4, "x": 550, "y": -2000},
-        {"name": "Security", "size": 6, "x": 1300, "y": -1700},
-        {"name": "Power Substation", "size": 6, "x": 1850, "y": -1800},
-        {"name": "Aurora Medical Clinic", "size": 6, "x": 2500, "y": -2250}
       ]
     },
-    "Fiorina":
+    "RadStation":
     {
-      "name": "Fiorina",
-      "url": "maps/Prison-0.png",
+      "name": "RadStation",
+      "url": "maps/RadStation-0.png",
       "labels":
       [
-        {"name": "LZ1", "size": 12, "x": 3325, "y": -250},
-        {"name": "LZ2", "size": 12, "x": 925, "y": 2450},
-        {"name": "Disco", "size": 8, "x": 2200, "y": 150},
-        {"name": "Survivor Camp", "size": 8, "x": 2100, "y": -350},
-        {"name": "Engineering Ring", "size": 8, "x": 2000, "y": 1300},
-        {"name": "Lowsec Cellblock", "size": 8, "x": 900, "y": 650},
-        {"name": "Research Cellblock", "size": 8, "x": 1200, "y": -1200},
-        {"name": "Medbay", "size": 8, "x": -50, "y": -825},
-        {"name": "Medbay Admin", "size": 8, "x": -250, "y": -1350},
-        {"name": "Cryo Lab", "size": 8, "x": -50, "y": -1900},
-        {"name": "Servers", "size": 8, "x": -1700, "y": -1900},
-        {"name": "Blue Dorms", "size": 8, "x": -1500, "y": -500},
-        {"name": "Chapel", "size": 8, "x": -700, "y": 0},
-        {"name": "Green Dorms", "size": 8, "x": -3000, "y": -500},
-        {"name": "Transit Hub", "size": 8, "x": -1300, "y": 650},
-        {"name": "Elevators", "size": 8, "x": -2750, "y": 550},
-        {"name": "Firebush", "size": 8, "x": -3700, "y": 550},
-        {"name": "Scavenger Ship", "size": 8, "x": -4200, "y": 1250},
-        {"name": "Botany", "size": 8, "x": -950, "y": 1300},
-        {"name": "Park", "size": 8, "x": -2050, "y": 2300},
-        {"name": "Souto Promo", "size": 8, "x": -1450, "y": 2300},
-        {"name": "Armory", "size": 8, "x": 400, "y": 1700},
-        {"name": "Garden", "size": 8, "x": 400, "y": 0}
       ]
     }
   },
-  "main": "Solaris"
+  "main": "Esperanza"
 }
