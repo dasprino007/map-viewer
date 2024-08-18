@@ -15,6 +15,7 @@ load_json("maps/maps.json");
 let labels = {};
 
 let image = new Image();
+image.src = "resources/icon.png" // placeholder for when image loading tooks ages
 let canvas;
 let ctx;
 
@@ -59,7 +60,10 @@ async function load_json(url)
   }
 
   let map_url = maps.maps[map_name].url;
-  labels = maps.maps[map_name].labels;
+  if ("labels" in maps.maps[map_name])
+  {
+    labels = maps.maps[map_name].labels;
+  }
 
   for (const [key, value] of Object.entries(maps.maps))
   {
