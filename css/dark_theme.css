@@ -1,3 +1,8 @@
+:root {
+  --dark: #011627;
+  --light: #D8D8F6;
+}
+
 body, html {
   background-color: #011627;
   margin: 0;
@@ -9,9 +14,9 @@ button {
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
 
-  background-color: #011627;
-  color: #D8D8F6;
-  border: 0.1em solid #D8D8F6;
+  background-color: var(--dark);
+  color: var(--light);
+  border: 0.1em solid var(--light);
   border-radius: 0.25em;
   font-size: 1.3em;
   margin: 0.2em 0.2em 0 0;
@@ -24,8 +29,8 @@ button {
 }
 
 button:hover {
-  background-color: #D8D8F6;
-  color: #011627;
+  background-color: var(--light);
+  color: var(--dark);
 }
 
 ul {

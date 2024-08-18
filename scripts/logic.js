@@ -112,7 +112,7 @@ function draw()
 function drawText(text, x, y, font_size=12, stroke_size=3, font="Arial")
 {
   ctx.fillStyle = "white";
-  ctx.strokeStyle = "#011627";
+  ctx.strokeStyle = "black";
   ctx.lineWidth = stroke_size;
 
   ctx.shadowBlur = 5;
